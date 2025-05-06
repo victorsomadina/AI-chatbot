@@ -1,0 +1,13 @@
+openai
+requests
+typing
+python-dotenv
+langchain_ollama
+langchain 
+langchain-community 
+langchain-openai
+ollama
+flask
+flask-cors
+google-generativeai
+PyMuPDF

@@ -1,0 +1,23 @@
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements.txt to the container
+COPY requirements.txt requirements.txt
+
+# Install Python dependencies
+RUN pip install -r requirements.txt
+
+# Copy service account credentials and .env file
+COPY .env .
+COPY kelp.py .
+COPY chat.py .
+COPY pyroutes.py .
+
+
+# Expose port for routes.py (assuming it runs on port 6000)
+EXPOSE 6800
+
+# Command to run routes.py
+CMD ["python", "pyroutes.py"]
